@@ -6,7 +6,6 @@ contact_links:
   - name: faq
     url: https://github.com/kennyxpalacios/dl-1/blob/main/docs/faq.md
     about: formats, 4k, playlists, where files go, and other common questions.
-# [check: enable once kenny confirms security reports go through github private vulnerability reporting]
-#  - name: report a security problem
-#    url: https://github.com/kennyxpalacios/dl-1/security/advisories/new
-#    about: please report security problems privately, not as an issue.
+  - name: report a security problem
+    url: https://github.com/kennyxpalacios/dl-1/security/advisories/new
+    about: please report security problems privately, not as a public issue.

@@ -11,7 +11,7 @@ body:
         - **domain only.** please don't paste private or login-only links, account names, or cookie files. if a public link shows the problem, you can mention it under "what happened."
         - **sites change.** if one site stopped working, a newer yt-dlp often fixes it. from source: `.venv/bin/python -m pip install -U yt-dlp`, then try again. the mac app carries its own yt-dlp, so those fixes arrive in a new dl-1 release.
         - **check the docs.** [troubleshooting](https://github.com/kennyxpalacios/dl-1/blob/main/docs/troubleshooting.md) covers the "can't be opened" warning, intel macs, login-only content and the common error lines. the [faq](https://github.com/kennyxpalacios/dl-1/blob/main/docs/faq.md) covers the rest.
-        - **security problem?** please don't post it here. [check: security contact, e.g. github private vulnerability reporting]
+        - **security problem?** please don't post it here. use [private vulnerability reporting](https://github.com/kennyxpalacios/dl-1/security/advisories/new) instead.
 
   - type: textarea
     id: what-happened
