@@ -1,0 +1,7 @@
+# dl-1 // universal media downloader
+# python 3.10+ (current yt-dlp requires it — run.sh handles this for you)
+yt-dlp[default,curl-cffi]>=2026.1.1   # extractor engine; curl-cffi = browser impersonation (vimeo etc.)
+fastapi>=0.115                        # api + static file serving
+uvicorn[standard]>=0.30               # asgi server
+imageio-ffmpeg>=0.6                   # bundled ffmpeg binary, used only if no system ffmpeg is found
+pywebview>=5.0                        # native window for DL-1.app (make_app.py)

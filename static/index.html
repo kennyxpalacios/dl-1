@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>dl-1 // universal media downloader</title>
+  <meta name="description" content="paste a link from youtube, vimeo, instagram, tiktok and about a thousand other sites. get an mp4 or an mp3. runs on your machine.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%23f4f4f4'/%3E%3Crect x='3' y='3' width='10' height='10' fill='%23ff3300'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<main class="device" id="device" data-state="idle">
+
+  <!-- ── top bar ───────────────────────────────────────────────────────── -->
+  <header class="bar bar--top">
+    <div class="cell cell--brand">
+      <span class="led" id="led" aria-hidden="true"></span>
+      <div>
+        <div class="brand">dl–1</div>
+        <div class="spec">universal media downloader</div>
+      </div>
+    </div>
+    <div class="cell cell--nav">
+      <div class="nav__title">input</div>
+      <div class="spec">youtube · vimeo · instagram · tiktok</div>
+      <div class="spec">+ about a thousand more</div>
+    </div>
+    <div class="cell cell--nav">
+      <div class="nav__title">output</div>
+      <div class="spec">mp4 // video, highest res</div>
+      <div class="spec">mp3 // audio, 320 kbps</div>
+    </div>
+    <div class="cell cell--nav">
+      <div class="nav__title">engine</div>
+      <div class="spec" id="spec-ytdlp">yt-dlp // …</div>
+      <div class="spec" id="spec-ffmpeg">ffmpeg // …</div>
+    </div>
+    <div class="cell cell--nav cell--end">
+      <div class="nav__title">local</div>
+      <div class="spec">nothing leaves your machine</div>
+      <div class="spec" id="spec-js">js runtime // …</div>
+    </div>
+  </header>
+
+  <nav class="strip" aria-label="supported sites">
+    <span class="strip__item strip__item--on">all sites</span>
+    <span class="strip__item">youtube</span>
+    <span class="strip__item">vimeo</span>
+    <span class="strip__item">instagram</span>
+    <span class="strip__item">tiktok</span>
+    <span class="strip__item">soundcloud</span>
+    <span class="strip__item">x / twitter</span>
+    <span class="strip__item">twitch</span>
+    <span class="strip__item">facebook</span>
+    <span class="strip__item">reddit</span>
+    <span class="strip__item">bandcamp</span>
+    <a class="strip__item strip__item--end" href="https://github.com/yt-dlp/yt-dlp/blob/master/supportedsites.md" target="_blank" rel="noopener">full list ↗</a>
+  </nav>
+
+  <!-- ── left column: input side ───────────────────────────────────────── -->
+  <section class="col col--in">
+    <div class="panel panel--intro">
+      <h1 class="h1">paste a link.<br>pick a format.<br>press run.</h1>
+    </div>
+
+    <form id="form" class="panel panel--controls" novalidate autocomplete="off">
+      <div class="field">
+        <label class="label" for="url"><span class="idx">01</span>source // url</label>
+        <div class="screen screen--input">
+          <span class="screen__prompt" aria-hidden="true">&gt;</span>
+          <input id="url" name="url" class="screen__input" type="url" inputmode="url"
+                 placeholder="https://" spellcheck="false" autocapitalize="off" autocorrect="off" required>
+          <button type="button" class="screen__clear" id="clear" aria-label="clear">×</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="label" id="format-label"><span class="idx">02</span>output // format</div>
+        <div class="switch" role="radiogroup" aria-labelledby="format-label">
+          <label class="switch__key">
+            <input type="radio" name="format" value="mp4" checked>
+            <span class="switch__face">
+              <span class="switch__dot" aria-hidden="true"></span>
+              <span class="switch__name">mp4</span>
+              <span class="switch__spec">video // high res</span>
+            </span>
+          </label>
+          <label class="switch__key" id="key-mp3">
+            <input type="radio" name="format" value="mp3">
+            <span class="switch__face">
+              <span class="switch__dot" aria-hidden="true"></span>
+              <span class="switch__name">mp3</span>
+              <span class="switch__spec" id="spec-mp3">audio // 320 kbps</span>
+            </span>
+          </label>
+        </div>
+      </div>
+
+      <div class="field field--run">
+        <div class="label"><span class="idx">03</span>action</div>
+        <button type="submit" class="key key--run" id="run">
+          <span class="key__label" id="run-label">run</span>
+          <span class="key__glyph" id="run-glyph" aria-hidden="true">→</span>
+        </button>
+        <div class="spec spec--hint" id="hint">ready.</div>
+      </div>
+    </form>
+  </section>
+
+  <!-- ── right column: output side ─────────────────────────────────────── -->
+  <section class="col col--out">
+    <div class="panel panel--display">
+      <div class="label label--row">
+        <span><span class="idx">04</span>display // log</span>
+        <span class="spec" id="status">status // idle</span>
+      </div>
+      <div class="screen screen--lcd" id="lcd">
+        <ol class="log" id="log" aria-live="polite"></ol>
+        <div class="readout" aria-hidden="true">
+          <span class="readout__num" id="pct">---</span><span class="readout__unit">%</span>
+        </div>
+      </div>
+      <div class="meter" id="meter" aria-hidden="true"></div>
+      <div class="telemetry">
+        <span class="spec" id="tele-size">size // --</span>
+        <span class="spec" id="tele-speed">speed // --</span>
+        <span class="spec" id="tele-eta">eta // --</span>
+      </div>
+    </div>
+
+    <div class="panel panel--result" id="result" hidden>
+      <div class="label label--row">
+        <span><span class="idx">05</span>output // file</span>
+        <span class="spec" id="result-spec">format // --</span>
+      </div>
+      <div class="result__name" id="result-name">—</div>
+      <a class="key key--save" id="save" href="#" download>
+        <span class="key__label">save file</span>
+        <span class="key__glyph" aria-hidden="true">↓</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ── bottom bar ────────────────────────────────────────────────────── -->
+  <footer class="bar bar--bottom">
+    <span class="spec">dl–1 // v1.0</span>
+    <span class="spec">files are kept on the server for two hours, then swept</span>
+    <span class="spec">built on yt-dlp + ffmpeg + fastapi</span>
+  </footer>
+</main>
+<script src="/static/app.js"></script>
+</body>
+</html>

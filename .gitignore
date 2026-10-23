@@ -1,0 +1,12 @@
+# local environment — fully disposable, run.sh rebuilds it
+.venv/
+.tools/
+downloads/
+__pycache__/
+*.pyc
+.DS_Store
+dist/
+app.log
+launcher/icon.png
+launcher/*.icns
+launch/
