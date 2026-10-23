@@ -10,7 +10,7 @@ dl-1 runs on your mac. nothing is uploaded. no account, no ads.
 
 ## 1. download it
 
-go to the [releases page](https://github.com/kennyxpalacios/dl-1/releases/latest) and download **dl-1-mac.zip**. it is roughly 100 mb.
+go to the [releases page](https://github.com/kennyxpalacios/dl-1/releases/latest) and download **dl-1-mac.zip**. it's about 75 mb.
 
 > screenshot: the releases page with dl-1-mac.zip highlighted
 

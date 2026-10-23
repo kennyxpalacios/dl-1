@@ -54,7 +54,7 @@ see [troubleshooting.md](troubleshooting.md). it needs the terminal route with `
 
 ## how do i update it?
 
-[check: how the mac app gets updated, and how to update yt-dlp inside it]. from source, run `.venv/bin/python -m pip install -U yt-dlp`.
+the mac app carries its own copy of yt-dlp. when sites change, the fix comes in a new dl-1 release: download it from the [releases page](https://github.com/kennyxpalacios/dl-1/releases/latest) and replace the app in applications. from source, run `.venv/bin/python -m pip install -U yt-dlp`.
 
 ## how do i remove it?
 

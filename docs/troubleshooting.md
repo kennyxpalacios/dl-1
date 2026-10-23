@@ -2,7 +2,7 @@
 
 find the line you see in the log on the panel. each heading is that line, as dl-1 prints it.
 
-before anything else: the number one fix is an out-of-date yt-dlp. the version is printed in the top bar. see [from-source.md](from-source.md) for how to update it. [check: how to update yt-dlp inside the downloaded mac app]
+before anything else: the number one fix is an out-of-date yt-dlp. the version is printed in the top bar. in the mac app, yt-dlp comes built in, so the fix arrives with a new dl-1 release: download it from the [releases page](https://github.com/kennyxpalacios/dl-1/releases/latest) and replace the app. from source, see [from-source.md](from-source.md).
 
 if your line isn't here, [open an issue](https://github.com/kennyxpalacios/dl-1/issues/new/choose) with the log line and the yt-dlp version from the top bar.
 
@@ -22,7 +22,7 @@ DL1_COOKIES_FROM_BROWSER=chrome bash run.sh
 
 use the browser you're signed in with: `chrome`, `firefox`, `safari`, `brave` or `edge`. macos may ask chrome for keychain access the first time. safari needs full disk access for terminal. only use your own accounts.
 
-[check: how to set this for the double-click mac app]
+the mac app you open from the dock can't take browser cookies in v1.0. for login-only content, run dl-1 from source with the line above. see [from-source.md](from-source.md).
 
 ## age-restricted — needs a logged-in session. set DL1_COOKIES_FROM_BROWSER (see readme).
 

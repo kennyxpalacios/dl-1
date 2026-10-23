@@ -15,7 +15,7 @@ git clone https://github.com/kennyxpalacios/dl-1.git
 cd dl-1
 ```
 
-or download the source zip from the [releases page](https://github.com/kennyxpalacios/dl-1/releases/latest) if one is attached, unzip it and `cd` into the folder. [check: is dl-1-source.zip attached to releases?]
+no git? on the [repo page](https://github.com/kennyxpalacios/dl-1), click **Code**, then **Download ZIP**. unzip it and `cd` into the folder.
 
 ## run it
 
