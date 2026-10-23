@@ -1,0 +1,33 @@
+name: an idea or a request
+description: something you'd like dl-1 to do.
+title: "feature: "
+labels: ["feature", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        thanks. dl-1 is small on purpose, so not everything makes it in, but every request gets read. if it's something that broke, use the other form instead.
+
+  - type: textarea
+    id: trying-to-do
+    attributes:
+      label: what you're trying to do
+      description: the job, not the button. e.g. "i build reference folders for edits and want..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: how-it-would-work
+    attributes:
+      label: how you'd want it to work
+      description: on the panel, in the file you get, wherever it fits.
+    validations:
+      required: true
+
+  - type: textarea
+    id: anything-else
+    attributes:
+      label: anything else
+      description: sketches, screenshots, other tools that do it well.
+    validations:
+      required: false

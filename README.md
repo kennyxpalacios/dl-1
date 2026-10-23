@@ -2,9 +2,21 @@
 
 paste a link from youtube, instagram, tiktok, vimeo (and about a thousand other sites), pick **mp4** or **mp3**, press run. the file lands in your browser's downloads. everything runs on your own machine — nothing is uploaded anywhere.
 
-built on [yt-dlp](https://github.com/yt-dlp/yt-dlp) + ffmpeg + fastapi. front panel in the teenage engineering idiom: off-white chassis, black lines, one orange, no rounded corners, everything lowercase.
+built on [yt-dlp](https://github.com/yt-dlp/yt-dlp) + ffmpeg + fastapi. hardware-inspired front panel: off-white chassis, black lines, one orange, no rounded corners, everything lowercase.
 
 ![dl-1 front panel](screenshot.png)
+
+---
+
+## get it
+
+**apple silicon mac (m1 and newer).** download [dl-1-mac.zip](https://github.com/kennyxpalacios/dl-1/releases/latest), unzip it, drag dl-1 into applications. the first time you open it, macos blocks it once, because the app isn't signed with an apple developer id yet. open **system settings → privacy & security**, scroll down to the line about dl-1, click **open anyway**, confirm. after that it opens like any other app.
+
+**intel mac, or you like the terminal.** clone this repo, run `bash run.sh`, open http://127.0.0.1:3300 in any browser. details below.
+
+runs on your mac. nothing is uploaded. no account, no ads.
+
+something broke? [open an issue](https://github.com/kennyxpalacios/dl-1/issues/new/choose) with the line from the log display and the yt-dlp version from the top bar.
 
 ---
 

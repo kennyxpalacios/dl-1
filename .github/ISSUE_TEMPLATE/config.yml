@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: troubleshooting
+    url: https://github.com/kennyxpalacios/dl-1/blob/main/docs/troubleshooting.md
+    about: the "can't be opened" warning, intel macs, login-only content, and what each error line means.
+  - name: faq
+    url: https://github.com/kennyxpalacios/dl-1/blob/main/docs/faq.md
+    about: formats, 4k, playlists, where files go, and other common questions.
+  - name: report a security problem
+    url: https://github.com/kennyxpalacios/dl-1/security/advisories/new
+    about: please report security problems privately, not as a public issue.
