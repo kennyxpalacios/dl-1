@@ -12,7 +12,15 @@ built on [yt-dlp](https://github.com/yt-dlp/yt-dlp) + ffmpeg + fastapi. hardware
 
 **apple silicon mac (m1 and newer).** download [dl-1-mac.zip](https://github.com/kennyxpalacios/dl-1/releases/latest), unzip it, drag dl-1 into applications. the first time you open it, macos blocks it once, because the app isn't signed with an apple developer id yet. open **system settings → privacy & security**, scroll down to the line about dl-1, click **open anyway**, confirm. after that it opens like any other app.
 
-**intel mac, or you like the terminal.** clone this repo, run `bash run.sh`, open http://127.0.0.1:3300 in any browser. details below.
+**or skip the warning.** open terminal (cmd + space, type terminal), paste this, press return. it downloads the same zip, puts dl-1 in applications and opens it. no "open anyway" step.
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/kennyxpalacios/dl-1/main/install.sh | bash
+```
+
+it's a short script. [read it first](install.sh) if you like.
+
+**intel mac, or you like the terminal.** clone this repo, run `bash run.sh`, open http://127.0.0.1:3300 in any browser. step by step: [docs/from-source.md](docs/from-source.md). full guide for the mac app: [docs/setup-guide.md](docs/setup-guide.md).
 
 runs on your mac. nothing is uploaded. no account, no ads.
 

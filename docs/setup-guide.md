@@ -8,6 +8,20 @@ dl-1 runs on your mac. nothing is uploaded. no account, no ads.
 
 ---
 
+## the shortcut
+
+if you're fine pasting one line into terminal, this does steps 1 to 3 for you and skips the macos warning entirely. open terminal (cmd + space, type terminal, press return), paste this, press return:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/kennyxpalacios/dl-1/main/install.sh | bash
+```
+
+it downloads the same dl-1-mac.zip from the releases page, puts dl-1 in applications and opens it. why no warning: macos only flags apps downloaded through a browser. the script is short, [read it](../install.sh) before you run it if you like.
+
+rather not use terminal? the steps below take about five minutes.
+
+---
+
 ## 1. download it
 
 go to the [releases page](https://github.com/kennyxpalacios/dl-1/releases/latest) and download **dl-1-mac.zip**. it's about 75 mb.

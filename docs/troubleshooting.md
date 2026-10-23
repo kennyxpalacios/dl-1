@@ -10,7 +10,7 @@ if your line isn't here, [open an issue](https://github.com/kennyxpalacios/dl-1/
 
 ## macos won't open the app
 
-not a dl-1 line, but the first thing most people hit. macos says it "could not verify" dl-1. open **System Settings**, **Privacy & Security**, scroll to the line about dl-1, click **Open Anyway**, confirm. details in [setup-guide.md](setup-guide.md).
+not a dl-1 line, but the first thing most people hit. macos says it "could not verify" dl-1. open **System Settings**, **Privacy & Security**, scroll to the line about dl-1, click **Open Anyway**, confirm. details in [setup-guide.md](setup-guide.md). or skip the warning: reinstall with the one-line installer, `curl -fsSL https://raw.githubusercontent.com/kennyxpalacios/dl-1/main/install.sh | bash`.
 
 ## this one needs a login. set DL1_COOKIES_FROM_BROWSER=chrome (see readme) and retry.
 
